@@ -1,0 +1,74 @@
+binar search on segments problem link : https://www.codechef.com/problems/DRIVE
+
+#include<bits/stdc++.h> 
+#define int long long
+#define vi vector<int>
+#define vii vector<vi>
+#define pii pair<int,int>
+#define rep(i,a,b) for(int i=a; i<b; i++)
+#define rrep(i,a,b) for(int i=a; i>=b; i--)
+#define pb(i) push_back(i)
+#define all(b) b.begin(),b.end()
+#define f first
+#define s second
+using namespace std;
+const int mod = 1e9 + 7;
+const int inf = 1e10 + 20;
+int check(vector<pii>&v, int t, int n, int m){
+    int curLocation = 1; // goes from 1 to n 
+    multiset<int> st;
+    int i = 0; 
+    while(curLocation < n){
+        // include all the segment those fall in the range
+        while(i < m && v[i].f <= curLocation){
+            st.insert(v[i].s);
+            i++;
+        }
+        int cur = curLocation;
+        // select the max segment with min(Ri,curLocation + t) for optimal selection 
+        while(cur == curLocation && !st.empty()){
+            int R = *st.begin();
+            st.erase(st.begin());
+            curLocation = max(curLocation, min(R, curLocation + t));
+        }
+        if(cur == curLocation){
+            break;
+        }
+    }
+
+    return curLocation == n;
+}
+void test_case(){
+    int n, m; cin>>n>>m;
+    vector<pii> v(m);
+    rep(i, 0, m){
+        cin>>v[i].f>>v[i].s;
+    }
+    sort(all(v));
+    int l = 1, r = 1e9 + 1;
+    int ans = -1;
+    while(l <= r){
+        int mid = l + (r - l)/2;
+        if(check(v, mid,n ,m)){
+            ans = mid;
+            r = mid - 1;
+        }else{
+            l = mid + 1;
+        }
+    }
+
+    cout<<ans;
+}
+ signed main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+
+    int t = 1;  cin>>t;
+    while(t--){
+        test_case();
+        cout<<'\n';
+    }
+    return 0;
+}
