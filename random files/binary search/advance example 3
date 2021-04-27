@@ -1,0 +1,73 @@
+dp with binary search : https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/
+ #include<bits/stdc++.h> 
+ #define int long long
+ #define vi vector<int>
+ #define vii vector<vi>
+ #define pii pair<int,int>
+ #define rep(i,a,b) for(int i=a; i<b; i++)
+ #define rrep(i,a,b) for(int i=a; i>=b; i--)
+ #define pb(i) push_back(i)
+ #define all(b) b.begin(),b.end()
+ using namespace std;
+ const int mod = 1e9 + 7;
+ const int inf = 1e10 + 20;
+  int find(vii &v, int i,int val){
+    int l = i + 1 , r = v.size() - 1;
+    
+    int ans = -1;
+    while(l <=r ){
+        int mid = (l + r)/2;
+        if(v[mid][0] > val){
+            ans = mid;
+            r = mid  - 1;
+        }
+        else{
+            l = mid + 1;
+        }
+    }
+    return ans;
+}
+vii dp;
+int solve(vii&v,int i,int k){
+    if(i>=v.size() or k==0)
+        return 0;
+    
+    if(dp[i][k]!=-1)
+        return dp[i][k];
+    
+    int j = find(v, i, v[i][1]);
+    int result = 0;
+    result = max(result,solve(v, j , k -1) + v[i][2]);
+    result = max(result, solve(v, i + 1, k));
+    
+    dp[i][k] = result;
+    return result;
+}
+
+ void test_case(){
+     int n; cin>>n;
+     vii events(n,vi(3,0));
+     rep(i,0,n){
+        rep(j,0,3){
+            cin>>events[i][j];
+        }
+     }
+
+     dp.assign(n + 1, vi(k + 1, -1));
+     sort(all(events));
+     cout<<solve(events , 0, k);
+
+ }
+  signed main(){
+     ios_base::sync_with_stdio(false);
+     cin.tie(nullptr);
+     cout.tie(nullptr);
+ 
+ 
+     int t = 1;  cin>>t;
+     while(t--){
+         test_case();
+         cout<<'\n';
+     }
+     return 0;
+ }
