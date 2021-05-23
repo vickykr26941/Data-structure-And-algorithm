@@ -1,3 +1,4 @@
+ // https://leetcode.com/problems/burst-balloons/
 #include<bits/stdc++.h> 
 #define int long long
 #define vi vector<int>
@@ -56,7 +57,8 @@ void test_case(){
     for(int i=1; i<=n; i++)
         cin>>a[i];
     a[0] = a[n+1] = 1;
-
+    
+    // recursion + memoization 
     // dp1.clear();
     // cout<<solve(a,1,n+1);
 
@@ -74,12 +76,6 @@ void test_case(){
             }
         }
     }
-    // for(int i=1; i<n; i++){
-    //     for(int j=1; j<n; j++){
-    //         cout<<dp[i][j]<<" ";
-    //     }
-    //     cout<<endl;
-    // }
     cout<<dp[1][n-1];
 }
 signed main(){
