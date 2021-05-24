@@ -1,5 +1,4 @@
    // https://leetcode.com/problems/split-array-largest-sum/
-
 #include<bits/stdc++.h> 
 #define int long long
 #define vi vector<int>
@@ -42,29 +41,70 @@ int solve(vector<int>&a,int i,int k){
 void test_case(){
     int n,k; cin>>n>>k;
     vector<int> a(n,0);
-    for(int i = 0; i<n; i++)
+    int s = 0, mn = inf;
+    for(int i = 0; i<n; i++){
         cin>>a[i];
+        s += a[i];
+        mn = min(mn,a[i]);
+    }
     v.clear();
     dp.clear();
 
     v.assign(n+1,0);
     for(int i=1; i<=n; i++)
         v[i] = v[i-1] + a[i-1];
+        
+        
+        // recursion + memoization (buttom up approach)
     // dp.assign(n+1,vector<int>(k+1,-1));
     // cout<<solve(a,0,k);
-    dp.assign(k,vector<int>(n,0));
 
-    for(int p=1; p<k; p++){
-        for(int i=p; i<n; i++){
-            int val = inf;
-            for(int j=0; j<i; j++){
-                val = min(val, max(dp[p-1][k],v[i+1] - v[j]));
+
+     // top down approach (iterative dp)
+    // dp.assign(k,vector<int>(n,0));
+
+    // for(int p=1; p<k; p++){
+    //     for(int i=p; i<n; i++){
+    //         int val = inf;
+    //         for(int j=0; j<i; j++){
+    //             val = min(val, max(dp[p-1][k],v[i+1] - v[j]));
+    //         }
+    //     dp[p][i] = val;
+    //     }
+    // }
+
+    // cout<<dp[k-1][n-1];
+
+
+    // using binary search time complexity recuces to Nlog(sum(a))
+
+    // 4 5 6 7 8 9 10 
+    // k = 3 
+    /// binary search and check for the minimum possible answer
+
+
+    int l = mn, r = s;
+    int ans = 0;
+    while(l <= r){
+        int mid = (l + r)/2;
+        int val = 0,c = 1;
+        for(int i=0; i<n; i++){
+            val += a[i];
+            if(val > mid){
+                val = a[i];
+                c++;
             }
-        dp[p][i] = val;
+        }
+        if(c<=k){
+            ans = mid;
+            r = mid - 1;
+        }
+        else{
+            l = mid + 1;
         }
     }
 
-    cout<<dp[k-1][n-1];
+    cout<<ans;
 }
 signed main(){
     ios_base::sync_with_stdio(false);
@@ -78,4 +118,3 @@ signed main(){
     }
     return 0;
 } 
-
