@@ -76,3 +76,40 @@ public:
     return ans;
     }
 };
+
+
+
+  // using sliding window
+class Solution {
+public:
+   
+    int constrainedSubsetSum(vector<int>& a, int k) {
+        int n = a.size();
+        vector<int> dp(n,0);
+        dp[0] = a[0];
+        
+        map<int,int> mp;
+        mp[a[0]]++;
+        int ans = dp[0];
+        for(int i=1; i<n; i++){
+            auto it = mp.rbegin();
+            dp[i] = a[i] + max(0,it->first);
+            if(i-k>=0){
+               mp[dp[i-k]]--;
+               if(mp[dp[i-k]]==0){
+                   mp.erase(dp[i-k]);
+               }
+            }
+            mp[dp[i]]++;
+            ans = max(dp[i],ans);
+        }     
+    return ans;
+    }
+};
+
+
+// we only need to find the max element in first k precalculated values
+// we can query using segment tree with point update or can maintain a map or multiset to find the
+// maximum of before k elements of dp 
+
+
