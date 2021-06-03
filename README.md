@@ -10,12 +10,3 @@ study materials reference :
 5) https://codeforces.com/
 
 // blogs (will be updaated)
-
-// profiles:
-codechef : https://www.codechef.com/users/vkkr125(
-           https://www.codechef.com/users/chandan_125
-           
-           
-leetcode: https://leetcode.com/vkkr125/
-codeforces:https://codeforces.com/profile/v_kkr125
-          
