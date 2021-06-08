@@ -9,4 +9,4 @@ study materials reference :
 4) https://leetcode.com/
 5) https://codeforces.com/
 
-// blogs (will be updaated)
+// blogs (will be updated)
