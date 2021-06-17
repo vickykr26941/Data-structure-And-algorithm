@@ -1,6 +1,7 @@
 this problem is not accessible it's premium from coding blocks
 problem disc : 
 given a number N (10^18) find the count of numbers after rearranging the digits of N those are divisible by M(100)
+leading zeros will be discarded 
 constraints : 
  N - > 10^18
  M = 100
@@ -10,6 +11,7 @@ constraints :
 // dp[mask][m] - > count of possible answers with Mask "mask" and reminder 'm'
 // we can start taking all digits that are present in N , reptation can be avoided if we have already taken a digit at particular level then 
 // we will not take that digit to the same level again, this problem is similler to TSP problem 
+
 
 #include<bits/stdc++.h> 
 #define int long long
