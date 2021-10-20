@@ -5,7 +5,7 @@ A corner rectangle is four distinct 1's on the grid that forms an axis-aligned r
  
 
 Example 1:
-// image []
+// image [https://github.com/vickykr26941/Data-structure-And-algorithm/blob/main/premium/leetcode%20dp%20premium%20questions/Images/cornerrec1-grid.jpg]
 
 Input: grid = [[1,0,0,1,0],[0,0,1,0,1],[0,0,0,1,0],[1,0,1,0,1]]
 Output: 1
