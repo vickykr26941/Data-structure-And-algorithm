@@ -9,14 +9,14 @@ Given an integer k, return the minimum integer number of days for any point to c
  
 
 Example 1:
-image1
+image1 : [https://github.com/vickykr26941/Data-structure-And-algorithm/blob/main/premium/binary%20search%20premium%20question/images/case-1.png]
 
 Input: points = [[1,1],[6,1]], k = 2
 Output: 3
 Explanation: On day 3, points (3,1) and (4,1) will contain both virus variants. Note that these are not the only points that will contain both virus variants.
 Example 2:
 
-image2 
+image2 : [https://github.com/vickykr26941/Data-structure-And-algorithm/blob/main/premium/binary%20search%20premium%20question/images/case-2.png] 
 
 
 Input: points = [[3,3],[1,2],[9,2]], k = 2
@@ -24,7 +24,7 @@ Output: 2
 
 Explanation: On day 2, points (1,3), (2,3), (2,2), and (3,2) will contain the first two viruses. Note that these are not the only points that will contain both virus variants.
 Example 3:
-image 3
+image 3 : [https://github.com/vickykr26941/Data-structure-And-algorithm/blob/main/premium/binary%20search%20premium%20question/images/case-2.png]
 
 Input: points = [[3,3],[1,2],[9,2]], k = 3
 Output: 4
