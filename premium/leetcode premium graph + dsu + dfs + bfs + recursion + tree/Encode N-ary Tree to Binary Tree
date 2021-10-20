@@ -13,6 +13,8 @@ come up with different approaches yourself.
  
 
 Example 1:
+image :https://github.com/vickykr26941/Data-structure-And-algorithm/blob/main/premium/leetcode%20premium%20graph%20%2B%20dsu%20%2B%20dfs%20%2B%20bfs%20%2B%20recursion%20%2B%20tree/images/narytreebinarytreeexample.png
+
 
 Input: root = [1,null,3,2,4,null,5,6]
 Output: [1,null,3,2,4,null,5,6]
