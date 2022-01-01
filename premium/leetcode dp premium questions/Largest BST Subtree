@@ -28,3 +28,44 @@ The number of nodes in the tree is in the range [0, 104].
 
 Follow up: Can you figure out ways to solve it with O(n) time complexity?
 
+
+
+
+// 2 jan 22
+// https://leetcode.com/problems/largest-bst-subtree/submissions/
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int ans = 0;
+    const int inf = INT_MAX;
+    vector<int> solve(TreeNode *root){
+        if(!root) return {1,inf,-inf,0}; // bst,min,max,count
+        vector<int> left = solve(root->left);
+        vector<int> right = solve(root->right);
+        if(!(left[0] && right[0] && root->val > left[2] && root->val < right[1])){
+            return {0,0,0,0};
+        }
+        int val = 1 + left[3] + right[3];
+        
+        ans = max(ans, val);
+        int min_val = min(root->val,left[1]);
+        int max_val = max(root->val,right[2]);
+        return {1,min_val,max_val,val};    
+    }
+    int largestBSTSubtree(TreeNode* root) {
+        solve(root);
+        return ans;
+    }
+};
