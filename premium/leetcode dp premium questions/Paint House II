@@ -32,3 +32,29 @@ costs[i].length == k
 Follow up: Could you solve it in O(nk) runtime?
 
 
+
+// 2 jan 22
+// https://leetcode.com/problems/paint-house-ii/submissions/
+
+class Solution {
+public:
+    
+    // time n * k * k
+    int dp[105][25];
+    int solve(vector<vector<int>> &arr,int i,int prev){
+        if(i >= arr.size()) return 0;
+        else if(dp[i][prev + 1] != -1) return dp[i][prev + 1];
+        int ans = INT_MAX;
+        for(int j = 0; j<arr[i].size(); j++){
+            if(j == prev) continue;
+            ans = min(ans,arr[i][j] + solve(arr,i + 1, j));
+        }
+        return dp[i][prev + 1] = ans;
+    }
+    int minCostII(vector<vector<int>>& costs) {
+        
+        memset(dp,-1,sizeof(dp));
+        return solve(costs,0,-1);
+    }
+};
+
