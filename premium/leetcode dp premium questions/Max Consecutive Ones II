@@ -22,3 +22,27 @@ nums[i] is either 0 or 1.
 Follow up: What if the input numbers come in one by one as an infinite stream? In other words, 
 you can't store all numbers coming from the stream as it's too large to hold in memory. Could you solve it efficiently?
 
+// 2 jan 22
+// https://leetcode.com/problems/max-consecutive-ones-ii/
+
+
+
+// solution using two pointer
+
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& arr) {
+        int ans = 0, i = 0, j = 0, cnt = 0;
+        while(j < arr.size()){
+            if(arr[j] == 0) cnt ++;
+            j++;
+            while(cnt > 1){
+                if(arr[i] == 0) cnt--;
+                i++;
+            }
+            ans = max(j - i + 1,ans);
+        }
+        return ans - 1;
+    }
+};
+
