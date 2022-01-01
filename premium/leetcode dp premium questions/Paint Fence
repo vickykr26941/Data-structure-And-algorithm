@@ -27,3 +27,62 @@ Constraints:
     1 <= n <= 50
     1 <= k <= 105
     The testcases are generated such that the answer is in the range [0, 231 - 1] for the given n and k
+
+
+
+
+
+// 2 jan 22
+// https://leetcode.com/problems/paint-fence/submissions/
+
+           // will be time limt exceeded not the good way 
+// class Solution {
+// public:
+
+//     int solve(int i,int n,int k,int l,int r){
+//         if(i >= n) return 1;
+        
+//         int ans = 0;
+//         for(int j = 0; j<k; j++){
+//             if(l == r){
+//                 if(l == j) continue;
+//                 ans += solve(i + 1,n,k,r,j);
+//             }else{
+//                 ans += solve(i + 1,n,k,r,j);
+//             }
+//         }
+//         return ;
+//     }
+//     int numWays(int n, int k) {
+        
+//         memset(dp,-1,sizeof(dp));
+//         return solve(0,n,k,-1,-1);
+//     }
+// };
+
+
+// // x x x x x x x x . .... .....
+
+
+class Solution {
+public:
+    
+    int dp[55];
+    int solve(int n,int k){
+        if(n == 1) return k;
+        else if(n == 2) return k * k;
+        else if(dp[n] != -1) return dp[n];
+        return dp[n] = (k - 1) * solve(n - 1, k) + (k - 1) * solve(n - 2,k);
+    }
+    int numWays(int n, int k) {
+        
+        memset(dp,-1,sizeof(dp));
+        return solve(n,k);
+    }
+};
+
+
+// x x x x x x x x . .... .....
+
+    
+ 
