@@ -35,3 +35,29 @@ Constraints:
   1 <= nums.length <= 105
   -105 <= nums[i] <= 105
 
+
+
+
+
+// 2 jan 22
+// https://leetcode.com/problems/maximum-alternating-subarray-sum/
+
+class Solution {
+public:
+    long long maximumAlternatingSubarraySum(vector<int>& arr) {
+        long long res = arr[0], even = 0, odd = 0;
+        for(int i = 0; i<arr.size(); i++){
+            if(i % 2 == 0 && even < 0) even = 0;
+            even = i % 2 == 0 ? even + arr[i] : even - arr[i];
+            res = max(res,even);
+        }
+        for(int i = 1; i<arr.size(); i++){
+            if(i % 2 != 0 && odd < 0){
+                odd = 0;
+            }
+            odd = i % 2 == 1 ? odd + arr[i] : odd - arr[i];
+            res = max(res,odd);
+        }
+        return res;
+    }
+};
