@@ -24,3 +24,31 @@ Constraints:
     1 <= n <= 100
     1 <= costs[i][j] <= 20
 
+
+
+// https://leetcode.com/problems/paint-house/
+// date : 2 jan 22
+
+
+class Solution {
+public:
+    
+    int dp[105][5];
+    int solve(vector<vector<int>> &arr,int i,int prev){
+        if(i >= arr.size()) return 0;
+        else if(dp[i][prev + 1] != -1) return dp[i][prev + 1];
+        
+        int ans = INT_MAX;
+        for(int j : {0,1,2}){
+            if(prev == j) continue;
+            ans = min(ans, arr[i][j] + solve(arr,i + 1, j));
+        }
+        return dp[i][prev + 1] = ans;
+    }
+    int minCost(vector<vector<int>>& costs) {
+        
+        memset(dp,-1,sizeof(dp));
+        return solve(costs,0,-1);
+    }
+};
+
