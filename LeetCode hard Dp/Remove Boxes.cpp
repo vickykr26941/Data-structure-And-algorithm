@@ -1,5 +1,5 @@
 /*
-  auther : vicky kumar
+  vicky kumar
   date : 01-07-2021
   source : // https://leetcode.com/problems/remove-boxes/
   LC : 546
