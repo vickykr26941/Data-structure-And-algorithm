@@ -1,5 +1,5 @@
 /*
-  auther : vicky kumar
+  vicky kumar
   date : 05/07/2021
   problem : https://leetcode.com/problems/minimum-space-wasted-from-packaging/
 */
