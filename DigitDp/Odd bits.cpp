@@ -1,5 +1,5 @@
 /*
-   auther : vicky kumar
+   vicky kumar
    date : 26/07/2021
    source : https://www.codechef.com/problems/ODDBITS
 */
