@@ -1,5 +1,5 @@
 /*
-  auther : vicky kumar
+  vicky kumar
   date : 17/07/2021
   source : https://www.hackerearth.com/practice/algorithms/dynamic-programming/bit-masking/practice-problems/algorithm/string-matching-google-3dc355a5/
 */
