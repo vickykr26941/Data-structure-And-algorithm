@@ -1,5 +1,5 @@
 /*
- auther : vicky kumar
+ vicky kumar
  date : 15/08/2021
  source : https://leetcode.com/problems/find-all-good-strings/
 */
