@@ -1,5 +1,5 @@
 /*
- auther : vicky kumar
+ vicky kumar
  date : 15/08/2021
  problem : https://leetcode.com/problems/student-attendance-record-ii/
 */
