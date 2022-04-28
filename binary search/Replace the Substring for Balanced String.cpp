@@ -1,5 +1,5 @@
 /*
-  auther : vicky kumar 
+  vicky kumar 
   date : 25/07/2021
   source : https://leetcode.com/problems/replace-the-substring-for-balanced-string/
 */
