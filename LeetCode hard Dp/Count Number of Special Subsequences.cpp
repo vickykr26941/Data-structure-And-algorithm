@@ -1,7 +1,9 @@
 
 
 /*
-  auther : vicky kumar 
+  
+  
+  vicky kumar 
   date : 01/08/2021
   source : https://leetcode.com/problems/count-number-of-special-subsequences
 */
