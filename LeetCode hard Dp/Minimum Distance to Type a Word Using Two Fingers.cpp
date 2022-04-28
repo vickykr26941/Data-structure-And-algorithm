@@ -1,5 +1,5 @@
 /*
-  autther : vicky kumar
+  vicky kumar
   date : 07/07/2021
   problem : https://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers
    
