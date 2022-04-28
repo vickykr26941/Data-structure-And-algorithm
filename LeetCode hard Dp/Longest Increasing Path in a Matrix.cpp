@@ -1,5 +1,5 @@
 /*
-  auther : vicky kumar
+  vicky kumar
   date : 24/07/2021
   source : https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
 */
