@@ -1,6 +1,6 @@
 /*
   
-  auther : vicky kumar 
+  vicky kumar 
   date : 06/07/2021
   problem : https://leetcode.com/problems/minimum-operations-to-make-a-subsequence/
 */
