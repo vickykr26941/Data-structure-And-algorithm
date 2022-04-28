@@ -1,5 +1,5 @@
 /*
-   auther : vicky kumar
+   vicky kumar
    date : 05-07-2021
    source : https://leetcode.com/problems/numbers-at-most-n-given-digit-set/
  */
