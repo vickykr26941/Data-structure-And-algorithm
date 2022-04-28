@@ -1,5 +1,5 @@
 /*
-  auther : vicky kumar
+  vicky kumar
   date : 22/07/2021
   source : https://leetcode.com/problems/decode-ways-ii
  
