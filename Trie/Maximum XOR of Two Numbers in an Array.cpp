@@ -1,5 +1,5 @@
 /*
-  auther : vicky kumar
+  vicky kumar
   date : 20/07/2021
   source : https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
 */
