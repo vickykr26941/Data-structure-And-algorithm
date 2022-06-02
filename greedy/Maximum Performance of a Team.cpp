@@ -1,13 +1,13 @@
 /*
-   auther : vicky kumar
+   vicky kumar
    date : 11/08/2021
    source : https://leetcode.com/problems/maximum-performance-of-a-team/
    
 */
 
-explanation : 
-  sort on the basis on efficiency (values)
-  assume each effieciency[i] as minimum and then taken first k maximum values from the prefix then calculate the answer ans specified in the question
+// explanation : 
+//   sort on the basis on efficiency (values)
+//   assume each effieciency[i] as minimum and then taken first k maximum values from the prefix then calculate the answer ans specified in the question
   
 
 
