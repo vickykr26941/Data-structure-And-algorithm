@@ -1,10 +1,10 @@
 /*
-  auther : vicky kumar
+  vicky kumar
   date : 11/08/2021
   source : https://leetcode.com/problems/candy/
 */
 
-explanations : give one candy to each child then greedly give candy to left then from right that would be optimal distrubution 
+// explanations : give one candy to each child then greedly give candy to left then from right that would be optimal distrubution 
 
 
 class Solution {
