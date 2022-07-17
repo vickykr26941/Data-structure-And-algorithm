@@ -1,5 +1,5 @@
 # random_data
-random standard coding algorithms and related problems
+standard coding algorithms and related problems
 
 
 study materials reference :
