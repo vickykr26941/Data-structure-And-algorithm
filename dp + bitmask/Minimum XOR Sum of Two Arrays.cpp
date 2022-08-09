@@ -4,9 +4,9 @@
   problem : https://leetcode.com/problems/minimum-xor-sum-of-two-arrays/
 */
 
-explanation : 
-  for each a[i] take b[j] in the second array and keep track to selected element from the 2nd array using mask
-  then transition  ans = min(ans, a[i] ^ a[j] + f(i+1,mask|(1<<j)) for all j in 2nd array where jth element is not selected 
+// explanation : 
+//   for each a[i] take b[j] in the second array and keep track to selected element from the 2nd array using mask
+//   then transition  ans = min(ans, a[i] ^ a[j] + f(i+1,mask|(1<<j)) for all j in 2nd array where jth element is not selected 
   
   
   

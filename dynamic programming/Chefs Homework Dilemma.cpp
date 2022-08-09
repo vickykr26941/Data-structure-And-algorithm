@@ -1,4 +1,4 @@
-/ *
+/*
    auther : vicky kumar 
    date : 25/07/2021
    source : https://www.codechef.com/START6B/problems/HMWPRB

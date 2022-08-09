@@ -1,4 +1,4 @@
-/ *
+/*
   auther : vicky kumar
   date : 31/08/2021
   source : https://leetcode.com/problems/kth-ancestor-of-a-tree-node/
