@@ -36,9 +36,18 @@ class MaxSegmentTree {
     tree[i] = max(tree[2 * i + 1], tree[2 * i + 2]);
   }
 };
+
 class Solution {
 public:
-    int lengthOfLIS(vector<int>& nums, int k) {
+    int lengthOfLIS(vector<int>& arr, int k) {
         
+        int n = 1e5 + 1;
+        MaxSegmentTree t(n);
+        for(int i = 0; i < arr.size(); i ++){
+            int cur = 1 + t.query(max(0, arr[i] - k), arr[i] - 1);
+            t.update(arr[i], cur);
+        }
+        
+        return t.tree[0];
     }
 };
